@@ -1,0 +1,16 @@
+<h1><%= @task.title %></h1>
+<p>details: <%= @task.details %></p>
+
+<%= form_for(@task) do |f| %>
+<%= f.check_box :completed %>
+<% if @task.completed == false %>
+<p><%= "Task is not completed" %></p>
+<% else %>
+<p><%= "Task is completed" %></p>
+<% end %>
+<% end %>
+
+<%= link_to "edit", task_edit_path %>
+<%= link_to "Back to home page", tasks_path %>
+
+
